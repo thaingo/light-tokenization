@@ -37,7 +37,8 @@ public class SchemeIdGetHandlerTest {
 
     @Test
     public void testSchemeIdGetHandlerTest() throws ClientException, ApiException {
-        /*
+        final String authToken = "Bearer eyJraWQiOiIxMDAiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ1cm46Y29tOm5ldHdvcmtudDpvYXV0aDI6djEiLCJhdWQiOiJ1cm46Y29tLm5ldHdvcmtudCIsImV4cCI6MTgzNzEwODM3NCwianRpIjoiNUVIWDFzXzlDZkhXQjY3dk1XOHRudyIsImlhdCI6MTUyMTc0ODM3NCwibmJmIjoxNTIxNzQ4MjU0LCJ2ZXJzaW9uIjoiMS4wIiwidXNlcl9pZCI6InN0ZXZlIiwidXNlcl90eXBlIjoiRU1QTE9ZRUUiLCJjbGllbnRfaWQiOiJmN2Q0MjM0OC1jNjQ3LTRlZmItYTUyZC00YzU3ODc0MjFlNzIiLCJzY29wZSI6WyJ0b2tlbi5yIiwidG9rZW4udyIsInNjaGVtZS5yIl19.r_3u4HAJpCztcX8HhV5kihSj6V2gBbqfB4Bdjr3arRKHKJdncaaoDRcYgXihdtutBsA7QVRimu576HL6FwV9iurpqEEA-uy-rzfuCfXJYP4s4F5C_PFaeroGi9siG_dc34p-iFh6eA6dksa6pwBiko9Pb1eBO8XfIV7ndNUmqTUbEvjV6J_Nv_aVPoDgOz00laMDDgj3bOtkz3lGTrfZCQloAhagthfMcUzyj04qe_bKZFKcrbCxXfBjelItUBwdt1td8FBpiSQPI0FXVud69TFmDmDZT6UXci8qJVOb0vuADJcPFe5PEWXxIORoduU8an0Mtey5svQx3c0W_Gqvcg";
+
         final Http2Client client = Http2Client.getInstance();
         final CountDownLatch latch = new CountDownLatch(1);
         final ClientConnection connection;
@@ -48,8 +49,8 @@ public class SchemeIdGetHandlerTest {
         }
         final AtomicReference<ClientResponse> reference = new AtomicReference<>();
         try {
-            ClientRequest request = new ClientRequest().setPath("/v1/scheme/id").setMethod(Methods.GET);
-            
+            ClientRequest request = new ClientRequest().setPath("/v1/scheme/1").setMethod(Methods.GET);
+            request.getRequestHeaders().put(Headers.AUTHORIZATION, authToken);
             connection.sendRequest(request, client.createClientCallback(reference, latch));
             
             latch.await();
@@ -61,8 +62,8 @@ public class SchemeIdGetHandlerTest {
         }
         int statusCode = reference.get().getResponseCode();
         String body = reference.get().getAttachment(Http2Client.RESPONSE_BODY);
+        logger.debug("body = " + body);
         Assert.assertEquals(200, statusCode);
         Assert.assertNotNull(body);
-        */
     }
 }

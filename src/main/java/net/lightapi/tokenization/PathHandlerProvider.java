@@ -1,11 +1,9 @@
 
 package net.lightapi.tokenization;
 
-import com.networknt.config.Config;
 import com.networknt.server.HandlerProvider;
 import io.undertow.Handlers;
 import io.undertow.server.HttpHandler;
-import io.undertow.server.HttpServerExchange;
 import io.undertow.util.Methods;
 import com.networknt.info.ServerInfoGetHandler;
 import com.networknt.health.HealthGetHandler;
@@ -19,9 +17,9 @@ public class PathHandlerProvider implements HandlerProvider {
         
             .add(Methods.POST, "/v1/token", new TokenPostHandler())
         
-            .add(Methods.GET, "/v1/token/{token}", new TokenTokenGetHandler())
+            .add(Methods.GET, "/v1/token/{token}", new TokenGetHandler())
         
-            .add(Methods.DELETE, "/v1/token/{token}", new TokenTokenDeleteHandler())
+            .add(Methods.DELETE, "/v1/token/{token}", new TokenDeleteHandler())
         
             .add(Methods.GET, "/v1/scheme", new SchemeGetHandler())
         

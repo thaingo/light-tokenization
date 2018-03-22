@@ -1,0 +1,21 @@
+tokenization:
+  DriverClassName: org.h2.jdbcx.JdbcDataSource
+  jdbcUrl: jdbc:h2:mem:XE;MODE=Oracle;INIT=runscript from 'classpath:scripts/create_tokenization.sql';
+  username: sa
+  password: sa
+  parameters:
+    maximumPoolSize: '5'
+vault000:
+  DriverClassName: org.h2.jdbcx.JdbcDataSource
+  jdbcUrl: jdbc:h2:mem:XE;MODE=Oracle;INIT=runscript from 'classpath:scripts/create_vault.sql';
+  username: sa
+  password: sa
+  parameters:
+    maximumPoolSize: '5'
+vault001:
+  DriverClassName: org.h2.jdbcx.JdbcDataSource
+  jdbcUrl: jdbc:h2:mem:XE;MODE=Oracle;INIT=runscript from 'classpath:scripts/create_vault.sql';
+  username: sa
+  password: sa
+  parameters:
+    maximumPoolSize: '5'

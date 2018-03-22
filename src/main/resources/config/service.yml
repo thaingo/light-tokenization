@@ -54,6 +54,8 @@ singletons:
 - com.networknt.server.HandlerProvider:
   - net.lightapi.tokenization.PathHandlerProvider
 # StartupHookProvider implementations, there are one to many and they are called in the same sequence defined.
+- com.networknt.server.StartupHookProvider:
+  - net.lightapi.tokenization.DbStartupHookProvider
 # - com.networknt.server.StartupHookProvider:
   # - com.networknt.server.Test1StartupHook
   # - com.networknt.server.Test2StartupHook
