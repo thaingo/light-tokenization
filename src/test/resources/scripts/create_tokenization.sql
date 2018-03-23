@@ -34,6 +34,8 @@ INSERT INTO client_database (client_id, database)
 VALUES('f7d42348-c647-4efb-a52d-4c5787421e72', 'vault000');
 
 INSERT INTO format_scheme (id, name, description)
+VALUES (0, 'UUID', 'UUID Version 4 Universally Unique Identifier. This format requires no validation and will return a UUID as the token.');
+INSERT INTO format_scheme (id, name, description)
 VALUES (1, 'GUID', 'Globally Unique Identifier. This format requires no validation and will return a GUID as the token.');
 INSERT INTO format_scheme (id, name, description)
 VALUES (2, 'LN', 'LUHN Compliant Numeric. This format is used to tokenize a social insurance number or social security number.');
@@ -45,4 +47,7 @@ INSERT INTO format_scheme (id, name, description)
 VALUES (5, 'AN', 'Alpha Numeric, length preserving token.');
 INSERT INTO format_scheme (id, name, description)
 VALUES (6, 'AN4', 'Alpha Numeric, length preserving token retaining the original last 4 characters.');
-
+INSERT INTO format_scheme (id, name, description)
+VALUES (7, 'CC', 'Credit Card Number, LUHN length preserving token retaining the original first character.');
+INSERT INTO format_scheme (id, name, description)
+VALUES (8, 'CC4', 'Credit Card Number, LUHN length preserving token retaining the original first digit and the last 4 digits.');

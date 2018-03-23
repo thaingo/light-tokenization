@@ -44,6 +44,8 @@ INSERT INTO client_database (client_id, database)
 VALUES('f7d42348-c647-4efb-a52d-4c5787421e72', 'vault000');
 
 INSERT INTO format_scheme (id, name, description)
+VALUES (0, 'UUID', 'UUID Version 4 Universally Unique Identifier. This format requires no validation and will return a UUID as the token.');
+INSERT INTO format_scheme (id, name, description)
 VALUES (1, 'GUID', 'Globally Unique Identifier. This format requires no validation and will return a GUID as the token.');
 INSERT INTO format_scheme (id, name, description)
 VALUES (2, 'LN', 'LUHN Compliant Numeric. This format is used to tokenize a social insurance number or social security number.');

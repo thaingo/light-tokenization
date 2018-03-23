@@ -6,8 +6,7 @@ import com.networknt.config.Config;
 import com.networknt.server.StartupHookProvider;
 import com.zaxxer.hikari.HikariDataSource;
 import net.lightapi.tokenization.model.Scheme;
-import net.lightapi.tokenization.tokenizer.GuidTokenizer;
-import net.lightapi.tokenization.tokenizer.Tokenizer;
+import net.lightapi.tokenization.tokenizer.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -86,6 +85,14 @@ public class DbStartupHookProvider implements StartupHookProvider {
         }
 
         // initialize tokenizer map.
+        tokenizerMap.put(0, new UuidTokenizer());
         tokenizerMap.put(1, new GuidTokenizer());
+        tokenizerMap.put(2, new LuhnTokenizer());
+        tokenizerMap.put(3, new RandomNumber());
+        tokenizerMap.put(4, new Luhn4Tokenizer());
+        tokenizerMap.put(5, new AlphaNumeric());
+        tokenizerMap.put(6, new AlphaNumeric4());
+        tokenizerMap.put(7, new CreditCard());
+        tokenizerMap.put(8, new CreditCard4());
     }
 }
