@@ -57,4 +57,7 @@ INSERT INTO format_scheme (id, name, description)
 VALUES (5, 'AN', 'Alpha Numeric, length preserving token.');
 INSERT INTO format_scheme (id, name, description)
 VALUES (6, 'AN4', 'Alpha Numeric, length preserving token retaining the original last 4 characters.');
-
+INSERT INTO format_scheme (id, name, description)
+VALUES (7, 'CC', 'Credit Card Number, LUHN length preserving token retaining the original first character.');
+INSERT INTO format_scheme (id, name, description)
+VALUES (8, 'CC4', 'Credit Card Number, LUHN length preserving token retaining the original first digit and the last 4 digits.');
