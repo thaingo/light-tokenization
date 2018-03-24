@@ -74,10 +74,10 @@ public class DbStartupHookProvider implements StartupHookProvider {
         }
 
         try (final Connection connection = dbMap.get("tokenization").getConnection();
-             PreparedStatement statement = connection.prepareStatement("SELECT client_id, database FROM client_database");
+             PreparedStatement statement = connection.prepareStatement("SELECT client_id, db_name FROM client_database");
              ResultSet resultSet = statement.executeQuery()) {
             while(resultSet.next()) {
-                clientDatabase.put(resultSet.getString("client_id"), resultSet.getString("database"));
+                clientDatabase.put(resultSet.getString("client_id"), resultSet.getString("db_name"));
             }
         } catch (SQLException e) {
             logger.error("SQLException:", e);

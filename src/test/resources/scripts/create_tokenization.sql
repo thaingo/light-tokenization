@@ -13,24 +13,24 @@ CREATE UNIQUE INDEX name_idx ON format_scheme(name);
 
 
 CREATE TABLE database_owner (
-  database VARCHAR(16) NOT NULL,
+  db_name VARCHAR(16) NOT NULL,
   description VARCHAR(4000) NOT NULL,
   owner_id VARCHAR(64) NOT NULL,
   owner_email VARCHAR(64) NOT NULL,
-  PRIMARY KEY (database)
+  PRIMARY KEY (db_name)
 );
 
 CREATE TABLE client_database (
   client_id VARCHAR(36) NOT NULL,
-  database VARCHAR(16) NOT NULL,
+  db_name VARCHAR(16) NOT NULL,
   PRIMARY KEY (client_id),
-  FOREIGN KEY (database) REFERENCES database_owner(database)
+  FOREIGN KEY (db_name) REFERENCES database_owner(db_name)
 );
 
-INSERT INTO database_owner(database, description, owner_id, owner_email)
+INSERT INTO database_owner(db_name, description, owner_id, owner_email)
 VALUES('vault000', 'The default vault database', 'admin', 'admin@networknt.com');
 
-INSERT INTO client_database (client_id, database)
+INSERT INTO client_database (client_id, db_name)
 VALUES('f7d42348-c647-4efb-a52d-4c5787421e72', 'vault000');
 
 INSERT INTO format_scheme (id, name, description)
