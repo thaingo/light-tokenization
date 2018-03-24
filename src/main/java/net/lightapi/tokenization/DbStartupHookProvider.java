@@ -45,7 +45,7 @@ public class DbStartupHookProvider implements StartupHookProvider {
             ds.setJdbcUrl(((Map<String, String>)v).get("jdbcUrl"));
             ds.setUsername(((Map<String, String>)v).get("username"));
             ds.setPassword(((Map<String, String>)v).get("password"));
-            Map<String, String> configParams = (Map<String, String>)((Map<String, Object>)v).get("parameters");
+            Map<String, Object> configParams = (Map<String, Object>)((Map<String, Object>)v).get("parameters");
             configParams.forEach((p, q) -> ds.addDataSourceProperty(p, q));
             dbMap.put(k, ds);
             if(!TOKENIZATION.equals(k)) {

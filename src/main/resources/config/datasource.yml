@@ -1,5 +1,5 @@
 tokenization:
-  jdbcUrl: jdbc:mysql://mysql:3306/tokenization?useSSL=false;
+  jdbcUrl: jdbc:mysql://198.55.49.187:3306/tokenization?useSSL=false
   username: mysqluser
   password: mysqlpw
   parameters:
@@ -10,7 +10,7 @@ tokenization:
     prepStmtCacheSize: 40
     prepStmtCacheSqlLimit: 20
 vault000:
-  jdbcUrl: jdbc:mysql://mysql:3306/vault000?useSSL=false;
+  jdbcUrl: jdbc:mysql://198.55.49.187:3306/vault000?useSSL=false
   username: mysqluser
   password: mysqlpw
   parameters:
