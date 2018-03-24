@@ -4,7 +4,7 @@
 set -ex
 
 VERSION=$1
-IMAGE_NAME="networknt/net.lightapi.tokenization-1.0.0"
+IMAGE_NAME="networknt/tokenization-1.0.0"
 
 showHelp() {
     echo " "
