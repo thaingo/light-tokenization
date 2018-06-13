@@ -2,9 +2,9 @@ package net.lightapi.tokenization.handler;
 
 import com.networknt.audit.AuditHandler;
 import com.networknt.exception.ApiException;
+import com.networknt.handler.LightHttpHandler;
 import com.networknt.status.Status;
 import com.networknt.utility.Constants;
-import io.undertow.server.HttpHandler;
 import io.undertow.server.HttpServerExchange;
 import net.lightapi.tokenization.DbStartupHookProvider;
 import org.slf4j.Logger;
@@ -13,7 +13,7 @@ import org.slf4j.LoggerFactory;
 import javax.sql.DataSource;
 import java.util.Map;
 
-public abstract class AbstractTokenHandler implements HttpHandler {
+public abstract class AbstractTokenHandler implements LightHttpHandler {
     private static final String CLIENT_ID_MISSING = "ERR12101";
     private static final String DATABASE_NOT_FOUND = "ERR12102";
     private static final String DATASOURCE_NOT_CONFIGURED = "ERR12103";

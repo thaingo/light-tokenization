@@ -2,18 +2,15 @@
 package net.lightapi.tokenization.handler;
 
 import com.networknt.config.Config;
-import io.undertow.server.HttpHandler;
+import com.networknt.handler.LightHttpHandler;
 import io.undertow.server.HttpServerExchange;
-import io.undertow.util.HttpString;
+import io.undertow.util.Headers;
 import net.lightapi.tokenization.DbStartupHookProvider;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class SchemeGetHandler implements HttpHandler {
+public class SchemeGetHandler implements LightHttpHandler {
     @Override
     public void handleRequest(HttpServerExchange exchange) throws Exception {
-        exchange.getResponseHeaders().add(new HttpString("Content-Type"), "application/json");
+        exchange.getResponseHeaders().add(Headers.CONTENT_TYPE, "application/json");
         exchange.getResponseSender().send(Config.getInstance().getMapper().writeValueAsString(DbStartupHookProvider.schemeList));
     }
 }
