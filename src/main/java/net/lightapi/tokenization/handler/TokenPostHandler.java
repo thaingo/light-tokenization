@@ -58,18 +58,14 @@ public class TokenPostHandler extends AbstractTokenHandler {
             }
         } catch (SQLException e) {
             logger.error("SQLException:", e);
-            Status status = new Status(FAIL_TO_QUERY_TOKEN_VAULT, database);
-            exchange.setStatusCode(status.getStatusCode());
-            exchange.getResponseSender().send(status.toString());
+            setExchangeStatus(exchange, FAIL_TO_QUERY_TOKEN_VAULT, database);
             return;
         }
 
         // call the tokenizer based on the schemeId
         Tokenizer tokenizer = DbStartupHookProvider.tokenizerMap.get(schemeId);
         if(tokenizer == null) {
-            Status status = new Status(SCHEME_NOT_FOUND, schemeId);
-            exchange.setStatusCode(status.getStatusCode());
-            exchange.getResponseSender().send(status.toString());
+            setExchangeStatus(exchange, SCHEME_NOT_FOUND, schemeId);
             return;
         }
         String token = tokenizer.tokenize(value);
@@ -83,9 +79,7 @@ public class TokenPostHandler extends AbstractTokenHandler {
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error("SQLException:", e);
-            Status status = new Status(FAIL_TO_INSERT_TOKEN_VAULT, database);
-            exchange.setStatusCode(status.getStatusCode());
-            exchange.getResponseSender().send(status.toString());
+            setExchangeStatus(exchange, FAIL_TO_INSERT_TOKEN_VAULT, database);
             return;
         }
 

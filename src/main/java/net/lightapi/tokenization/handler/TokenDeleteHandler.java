@@ -37,9 +37,7 @@ public class TokenDeleteHandler extends AbstractTokenHandler {
             statement.executeUpdate();
         } catch (SQLException e) {
             logger.error("SQLException:", e);
-            Status status = new Status(FAIL_TO_DELETE_TOKEN_VAULT, database);
-            exchange.setStatusCode(status.getStatusCode());
-            exchange.getResponseSender().send(status.toString());
+            setExchangeStatus(exchange, FAIL_TO_DELETE_TOKEN_VAULT, database);
             return;
         }
 

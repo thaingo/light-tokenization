@@ -50,17 +50,13 @@ public class TokenGetHandler extends AbstractTokenHandler {
                         return;
                     } else {
                         // the token is not found in vault
-                        Status status = new Status(TOKEN_NOT_FOUND, token, database);
-                        exchange.setStatusCode(status.getStatusCode());
-                        exchange.getResponseSender().send(status.toString());
+                        setExchangeStatus(exchange, TOKEN_NOT_FOUND, token, database);
                         return;
                     }
                 }
             } catch (SQLException e) {
                 logger.error("SQLException:", e);
-                Status status = new Status(FAIL_TO_QUERY_TOKEN_VAULT, database);
-                exchange.setStatusCode(status.getStatusCode());
-                exchange.getResponseSender().send(status.toString());
+                setExchangeStatus(exchange, FAIL_TO_QUERY_TOKEN_VAULT, database);
                 return;
             }
         } else {
