@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.5.15](https://github.com/networknt/light-tokenization/tree/1.5.15) (2018-06-18)
+[Full Changelog](https://github.com/networknt/light-tokenization/compare/1.5.14...1.5.15)
+
+**Closed issues:**
+
+- update dockerfile and pom.xml to remove the version in the jar file [\#5](https://github.com/networknt/light-tokenization/issues/5)
+- creating h2 database schemas when start test server [\#4](https://github.com/networknt/light-tokenization/issues/4)
+- create LightHttpHandler with default method to handle the error status [\#3](https://github.com/networknt/light-tokenization/issues/3)
+
 ## [1.5.14](https://github.com/networknt/light-tokenization/tree/1.5.14) (2018-05-20)
 **Closed issues:**
 
