@@ -1,5 +1,13 @@
 # Change Log
 
+## [1.5.19](https://github.com/networknt/light-tokenization/tree/1.5.19) (2018-09-22)
+[Full Changelog](https://github.com/networknt/light-tokenization/compare/1.5.18...1.5.19)
+
+**Closed issues:**
+
+- remove status.yml from the config folder [\#9](https://github.com/networknt/light-tokenization/issues/9)
+- remove unused status code from status.yml [\#8](https://github.com/networknt/light-tokenization/issues/8)
+
 ## [1.5.18](https://github.com/networknt/light-tokenization/tree/1.5.18) (2018-08-16)
 [Full Changelog](https://github.com/networknt/light-tokenization/compare/1.5.17...1.5.18)
 
