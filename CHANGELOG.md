@@ -1,5 +1,15 @@
 # Change Log
 
+## [1.5.21](https://github.com/networknt/light-tokenization/tree/1.5.21) (2018-10-26)
+[Full Changelog](https://github.com/networknt/light-tokenization/compare/1.5.20...1.5.21)
+
+**Closed issues:**
+
+- delete security.yml and add openapi-security.yml and openapi-validator.yml [\#10](https://github.com/networknt/light-tokenization/issues/10)
+
+## [1.5.20](https://github.com/networknt/light-tokenization/tree/1.5.20) (2018-10-03)
+[Full Changelog](https://github.com/networknt/light-tokenization/compare/1.5.19...1.5.20)
+
 ## [1.5.19](https://github.com/networknt/light-tokenization/tree/1.5.19) (2018-09-22)
 [Full Changelog](https://github.com/networknt/light-tokenization/compare/1.5.18...1.5.19)
 
