@@ -59,6 +59,9 @@ public class TokenDeleteHandlerTest {
         }
         int statusCode = reference.get().getResponseCode();
         String body = reference.get().getAttachment(Http2Client.RESPONSE_BODY);
+        if(statusCode != 200) {
+            logger.error("Error:" + body);
+        }
         Assert.assertEquals(200, statusCode);
         Assert.assertNotNull(body);
         logger.debug("body = " + body);
