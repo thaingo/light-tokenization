@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.5.34](https://github.com/networknt/light-tokenization/tree/1.5.34) (2019-04-07)
+
+
+**Merged pull requests:**
+
+
 ## [1.5.31](https://github.com/networknt/light-tokenization/tree/1.5.31) (2019-02-21)
 [Full Changelog](https://github.com/networknt/light-tokenization/compare/1.5.30...1.5.31)
 
