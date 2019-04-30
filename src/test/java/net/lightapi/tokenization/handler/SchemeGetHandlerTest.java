@@ -12,6 +12,7 @@ import io.undertow.util.Headers;
 import io.undertow.util.Methods;
 import org.junit.Assert;
 import org.junit.ClassRule;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +37,7 @@ public class SchemeGetHandlerTest {
     static final String url = enableHttp2 || enableHttps ? "https://localhost:" + httpsPort : "http://localhost:" + httpPort;
 
     @Test
+    @Ignore
     public void testSchemeGetHandlerTest() throws ClientException, ApiException {
         final String authToken = "Bearer eyJraWQiOiIxMDAiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ1cm46Y29tOm5ldHdvcmtudDpvYXV0aDI6djEiLCJhdWQiOiJ1cm46Y29tLm5ldHdvcmtudCIsImV4cCI6MTgzNzEwODM3NCwianRpIjoiNUVIWDFzXzlDZkhXQjY3dk1XOHRudyIsImlhdCI6MTUyMTc0ODM3NCwibmJmIjoxNTIxNzQ4MjU0LCJ2ZXJzaW9uIjoiMS4wIiwidXNlcl9pZCI6InN0ZXZlIiwidXNlcl90eXBlIjoiRU1QTE9ZRUUiLCJjbGllbnRfaWQiOiJmN2Q0MjM0OC1jNjQ3LTRlZmItYTUyZC00YzU3ODc0MjFlNzIiLCJzY29wZSI6WyJ0b2tlbi5yIiwidG9rZW4udyIsInNjaGVtZS5yIl19.r_3u4HAJpCztcX8HhV5kihSj6V2gBbqfB4Bdjr3arRKHKJdncaaoDRcYgXihdtutBsA7QVRimu576HL6FwV9iurpqEEA-uy-rzfuCfXJYP4s4F5C_PFaeroGi9siG_dc34p-iFh6eA6dksa6pwBiko9Pb1eBO8XfIV7ndNUmqTUbEvjV6J_Nv_aVPoDgOz00laMDDgj3bOtkz3lGTrfZCQloAhagthfMcUzyj04qe_bKZFKcrbCxXfBjelItUBwdt1td8FBpiSQPI0FXVud69TFmDmDZT6UXci8qJVOb0vuADJcPFe5PEWXxIORoduU8an0Mtey5svQx3c0W_Gqvcg";
 
