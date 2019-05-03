@@ -1,5 +1,14 @@
 # Change Log
 
+## [1.6.1](https://github.com/networknt/light-tokenization/tree/1.6.1) (2019-05-03)
+
+
+**Merged pull requests:**
+
+
+- Issue16 [\#17](https://github.com/networknt/light-tokenization/pull/17) ([stevehu](https://github.com/stevehu))
+- fixes \#14 disable the TokenDeleteHandler test [\#15](https://github.com/networknt/light-tokenization/pull/15) ([stevehu](https://github.com/stevehu))
+- fixes \#12 use light-4j version only and increase test pool size [\#13](https://github.com/networknt/light-tokenization/pull/13) ([stevehu](https://github.com/stevehu))
 ## [1.6.0](https://github.com/networknt/light-tokenization/tree/1.6.0) (2019-04-06)
 
 
